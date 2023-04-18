@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      #      host: 172.16.130.11
+      database: mock
+#      uri: mongodb://172.16.130.11:28017,172.16.130.11:28018,172.16.130.11:28019/mock?replicaSet=rs0&readPreference=secondaryPreferred&connectTimeoutMS=300000
+#      uri: mongodb://172.16.130.11:27017/foo
+      uri: mongodb://afei:afei@172.16.130.11:27017
