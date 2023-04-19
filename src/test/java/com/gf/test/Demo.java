@@ -71,7 +71,7 @@ public class Demo {
 
     @Test
     public void testFind() {
-        Person person = mongoTemplate.findById("10118", Person.class);
+        Person person = mongoTemplate.findById("10117", Person.class);
         log.info("person: {}", person);
 
 
