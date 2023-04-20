@@ -46,6 +46,9 @@ public class GeoTest {
         log.info("neighborhood: {}", neighborhood);
     }
 
+    /**
+     *  { "location" : { "$geoWithin" : { "$centerSphere" : [[-73.93414657, 40.82302903], 7.83927971443699E-5]}}}
+     */
     @Test
     public void testQuery() {
         Circle circle = new Circle(-73.93414657, 40.82302903, 0.5 / Metrics.KILOMETERS.getMultiplier());
@@ -54,7 +57,9 @@ public class GeoTest {
         log.info("list: {}", list);
     }
 
-
+    /**
+     * { "location" : { "$nearSphere" : { "$geometry" : { "type" : "Point", "coordinates" : [-73.93414657, 40.82302903]}, "$minDistance" : 1000000.0, "$maxDistance" : 3000000.0}}}
+     */
     @Test
     public void testQuery2() {
         GeoJsonPoint point = new GeoJsonPoint(-73.93414657, 40.82302903);
@@ -85,7 +90,9 @@ public class GeoTest {
         mongoOperations.insert(restaurant2);
     }
 
-
+    /**
+     *  [{ "$geoNear" : { "maxDistance" : 3000000.0, "minDistance" : 1000000.0, "distanceMultiplier" : 0.001, "near" : { "type" : "Point", "coordinates" : [116.23, 39.54]}, "spherical" : true, "distanceField" : "dis"}}]
+     */
     @Test
     public void testQuery4() {
         GeoJsonPoint point = new GeoJsonPoint(116.23, 39.54);
